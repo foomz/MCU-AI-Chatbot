@@ -24,3 +24,152 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fade in animation for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Global transitions */
+* {
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+body {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Staggered animations for children */
+.animate-stagger > * {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.animate-stagger > *:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* Header animation */
+header {
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Hero section animation */
+.hero-section {
+  animation: fadeInHero 0.7s ease-out 0.2s both;
+}
+
+/* Chatbot section animation */
+.chatbot-section {
+  animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+/* Footer animation */
+footer {
+  animation: fadeIn 0.6s ease-out 0.5s both;
+}
+
+/* Hover effects */
+a, button {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+a:hover, button:hover {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Interactive elements */
+button {
+  @apply active:scale-95 active:transition-transform active:duration-100;
+}
+
+/* Smooth color transitions */
+.bg-gradient-to-br {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* Input transitions */
+input, textarea {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+input:focus, textarea:focus {
+  @apply outline-none transition-all duration-200 ease-in-out;
+}
+
+/* Badge/Tag animations */
+.badge, .tag {
+  animation: fadeIn 0.4s ease-out backwards;
+}
+
+.badge:nth-child(1) { animation-delay: 0.1s; }
+.badge:nth-child(2) { animation-delay: 0.2s; }
+.badge:nth-child(3) { animation-delay: 0.3s; }
+.badge:nth-child(4) { animation-delay: 0.4s; }
+
+/* Scroll reveal */
+@keyframes revealOnScroll {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message animations */
+.message {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.message-typing {
+  animation: fadeIn 0.2s ease-out;
+}
