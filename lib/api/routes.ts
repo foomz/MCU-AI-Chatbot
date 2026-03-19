@@ -1,6 +1,6 @@
 // frontend/lib/api/routes.ts // Declare base URL + route paths for the frontend to interact with the backend API server
 export const API_BASE_URL = /// Base URL for the backend API, used for making requests from the frontend to the backend server.
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5000"; // Fallback to localhost if the environment variable is not set
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://mcu-ai-chatbot-backend-production.up.railway.app"; // Fallback to localhost if the environment variable is not set
 
 export const API_ROUTES = { // Define API routes for the frontend to interact with the backend server
   hello: "/api/hello", // Route for a basic test endpoint to verify that the backend server is working
